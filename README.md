@@ -1,68 +1,38 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+--- AirTable ---
 
-## Available Scripts
+##Installation
+To run this react application in your terminal enter:
 
-In the project directory, you can run:
+npm install;
+npm start;
 
-### `npm start`
+##Part 1:
+The tech stack I chose to use includes HTML, CSS, JavaScript, React and Scss (Sass).  I decided to use a preprocessor (Sass) to handle CSS because the preprocessor will make the css easier to maintain as well as making the components easier to share with other applications or web pages.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+If I had more time I would fix a bug I overlooked, which was to left align the job postings if there weren't enough to fill out a row.  I should have asked the designer for the margin between job listings instead of making assumptions about the width of the job listings and using space-between to calculate the margins.  I woud also add the use of styled components so that a design system could be used and shared with another React application.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Another feature I would like to add would be to implement aria live regions so that a user who may have trouble viewing the page to be alerted should the content of the job listings changes when a filter is used.
 
-### `npm test`
+To better improve the user experience I would add the use of pagination as well as allow the user to select more than one location or department during job searches.  If there are many job listings, I think the view for job listings could be improved.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+##Part #2:
+To start off the project I would need to ask some questions about the project:
+Does the stakeholder have all of the content/assetts ready?
+Is there a design system already in place? If not, is a comprehensive design system needed to be developed?
+How does the menu interact with the user?  How does it appear onto the view?
+How is the data for the job listings being served? If an API is involved, what is the schema?
+Is there a certain tech stack that is part of the requirements?
 
-### `npm run build`
+If there isn't a design system already in place, the development will be a bit more involved.  I would start by creating a design system based on the provided redlined files taking into account the different break points.  Based on the mockups provided, I don't think it would take anymore than 1-2 days to develop a design system is comprehensive enough to be resused.  I would add another day or two if the design system would require documentation through the use of Storybook or similar application.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Once, the design system is built, it will be a matter of laying out the page, building the menu component, and connecting the job search functionality.  In this particular instance, I would add Redux, and pagination to the job search.  In order to make pagination easier to implement, I would talk to the devlopers of the api to include properties that link to the next and previous results.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+I would like to add a day or two just to work on useablility and accessibility.  Making sure the page was developed in a way that made it easy for someone who only used their keyboard to access the page as well as those who use a screen reader.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+From the files provided I would say that this project would take me between 7-10 days.  This would include:
+    Development of a design system (for this page).
+    Laying out the contents of the page.
+    Development of the navigation menu.
+    Integration of the job search functionality.
+    Testing for usability & accessability.
+    Unit testing for React.

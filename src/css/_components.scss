@@ -1,0 +1,138 @@
+@import '_variables';
+
+.image-container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    height: 100%;
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain; /*or "cover" depends on what you need*/
+        display: block;
+        margin: 0 auto;
+        }
+}
+
+.job-card {
+    display: block;
+    text-decoration: none;
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+    .highlight {
+        display: block;
+        border-top: 1px solid $lightGrey;
+        position: relative;
+    }
+    .location {
+        color: $mediumGrey;
+        line-height: 1.25;
+    }
+    .job-title {
+        color: $darkGrey;
+        @include breakpoint(sm) {
+            font-size: 20px;
+        }
+    }
+    &:hover {
+        cursor: pointer;
+        .highlight {
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: -4.5px;
+                right: 0;
+                // border: 1px solid #000;
+                border-width: 0 0 1px 1px;
+                width: 8px;
+                height: 8px;
+                line-height: 0;
+                font-size: 0;
+                transform: rotate(-135deg);
+            }
+        }
+    }
+    &[data-department="Engineering"] {
+        &:hover {
+            .highlight {
+                border-top: 1px solid $deptEng;
+                &:after {
+                    border-bottom: 1px solid $deptEng;
+                    border-left: 1px solid $deptEng;
+                }
+            }
+        }
+    }
+    &[data-department="Customer Success"] {
+        &:hover {
+            .highlight {
+                border-top: 1px solid $deptCst;
+                &:after {
+                    border-bottom: 1px solid $deptCst;
+                    border-left: 1px solid $deptCst;
+                }
+            }
+        }
+    }
+    &[data-department="Marketing"] {
+        &:hover {
+            .highlight {
+                border-top: 1px solid $deptMkt;
+                &:after {
+                    border-bottom: 1px solid $deptMkt;
+                    border-left: 1px solid $deptMkt;
+                }
+            }
+        }
+    }
+    @include breakpoint(sm) {
+        padding-bottom: 32px;
+    }
+}
+
+.custom-select {
+    position: relative;
+    label {
+        color: $mediumGrey;
+        display: block;
+    }
+    .select-container {
+        display: inline-block;
+        position: relative;
+        border: 1px solid $lightGrey;
+        border-radius: 5px;
+        select {
+            border-radius: 5px;
+            border: none;
+            padding: 8px 48px 8px 8px;
+            font-family: $primaryFont;
+            color: $mediumGrey;
+            appearance: none;
+            position: relative;
+        }
+        .caret {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 32px;
+            height: 100%;
+            pointer-events: none;
+            &::after {
+                position: absolute;
+                top: 16px;
+                right: 0;
+                transform: translate(-12px, -50%);
+                display: block;
+                content: '';
+                width: 0;
+                height: 0;
+                border-left: 4px solid transparent;
+                border-right: 4px solid transparent;
+                border-top: 4px solid $lightGrey;
+            }
+        }
+    }
+}

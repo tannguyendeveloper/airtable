@@ -1,0 +1,83 @@
+@use '_variables';
+@import 'font-face.css';
+
+$smaller: 16px;
+$small: 20px;
+$regular: 24px;
+$large: 32px;
+$huge: 64px;
+
+// Heading Tags
+$headings: ();
+@for $i from 1 through 6 {
+    $headings: append($headings, unquote('h#{$i}'), comma);
+}
+
+#{$headings} {
+    font-weight: 500;
+}
+
+body {
+    font-family: $primaryFont;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: $huge;
+    font-weight: 500;
+    line-height: 1.1;
+    color: $darkGrey;
+    @include breakpoint(sm) {
+        font-size: $large;
+    }
+}
+
+h3 {
+    display: flex;
+    align-items: center;
+    font-size: $large;
+    @include breakpoint(sm) {
+        font-size: $regular;
+    }
+}
+
+h3 > img {
+    margin-right: .5em;
+}
+
+p {
+    font-size: 24px;
+    line-height: 1.5;
+    color: $mediumGrey;
+    @include breakpoint(sm) {
+        font-size: $small;
+    }
+}
+
+label, h2.label {
+    color: $mediumGrey;
+    text-transform: uppercase;
+    line-height: 1.25;
+    letter-spacing: calc(1rem * .08);
+    font-weight: 500;
+}
+
+.smaller {
+    font-size: $smaller;
+}
+
+.small {
+    font-size: $small;
+}
+
+.regular {
+    font-size: $regular;
+}
+
+.large {
+    font-size: $large;
+}
+
+.huge {
+    font-size: $huge;
+}
